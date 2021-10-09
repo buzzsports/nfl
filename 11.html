@@ -1,19 +1,58 @@
-<html><head><script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
-</head>
-<body style="margin:0px;padding:0px;">
-<div id="ppp"></div>
-<script>
-var playerElement = document.getElementById("ppp");
+
+
+
+<html>
+<head>
+ <script type="text/javascript" src="//cdn.jsdelivr.net/gh/clappr/clappr@latest/dist/clappr.min.js"></script>
+<script type="text/javascript" src="level-selector.js"></script>
+<style type="text/css">
+/*
+body { border-width: 0px; margin: 0px; padding: 0px; overflow: hidden; }
+*/
+html {
+    height: 100%;
+}
+body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    margin: 0;
+}
+#vid {
+    width: 100vw;
+    height: 56.25vw;
+    max-height: 100vh;
+    max-width: 177.78vh;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+</style>
+<script async src='/cdn-cgi/challenge-platform/h/b/scripts/invisible.js'></script></head>
+<body>
+<span id="player"></div>
+<script type="text/javascript">
+var playerElement = document.getElementById("player");
 var player = new Clappr.Player({
-source:'http://stream2.grandma.fit/espn2.m3u8',
- height: "100%",
- width: "100%",
-parentId: "#ppp",
-plugins: [LevelSelector],
-mimeType: "application/x-mpegURL",
-autoPlay: true,
+  source: 'http://stream2.grandma.fit/espn2.m3u8',
+  mediacontrol: {seekbar: "#ff9114", buttons: "#ff9114"},
+  mimeType: 'application/x-mpegURL',
+  plugins: [LevelSelector],
+  height: '100%',
+  width: '100%',
 });
+player.attachTo(playerElement);
+
+setTimeout(function() {
+        $('.media-control-left-panel')['append']('<button style="" type="button" class="media-control-button media-control-icon enabled" data-hd-indicator="" aria-label="hd-indicator"><a href="http://techjka.com/donate.html" target="blank"><img src="https://i.imgur.com/cp7Uf7J.png" /></a></button>')
+}, 5000)
 </script>
-</html>
 
 
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'69b5a5a25ce14a35',m:'deTh9AFwMKp964c7uvOFsqRGGK2lYieE7XPf.5oSgoM-1633761935-0-AX3GEA/wYYX82Sj0X3tboFt81cetjtUjnKB0JWnORJ72nVIB+F96PM60yg1WvaxrTuzdhEtyTM8qilSHY1Oo2kRNXMUTDkIt1ewuC4XJXxbetAQk1sKf955ApS+CTNF63Q==',s:[0x89fb4a9de9,0x6f2693963a],u:'/cdn-cgi/challenge-platform/h/b'}})();</script></body></html>
